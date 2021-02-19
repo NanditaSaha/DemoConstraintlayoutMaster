@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_view_hero"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintDimensionRatio="1:0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/one"/>
+    <ImageView
+        android:id="@+id/image_small"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="0dp"
+        app:layout_constraintDimensionRatio="w,1:1.5"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_hero"
+        app:layout_constraintTop_toBottomOf="@id/image_view_hero"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        android:src="@drawable/four"/>
+    <TextView
+        android:id="@+id/textview_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Example 2"
+        app:layout_constraintTop_toBottomOf="@id/image_view_hero"
+        app:layout_constraintStart_toEndOf="@id/image_small"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp" />
+    <TextView
+        android:id="@+id/textview_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Constraintlayout Example"
+        app:layout_constraintTop_toBottomOf="@id/textview_one"
+        app:layout_constraintStart_toEndOf="@id/image_small"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp" />
+    <ImageView
+        android:id="@+id/iv_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/circular_bg"
+        app:layout_constraintTop_toBottomOf="@id/image_view_hero"/>
+    <Button
+        android:id="@+id/btn_one"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias=".5"
+        android:text="Add ratings now"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/deamwhite"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier_one"
+        app:layout_constraintEnd_toStartOf="@+id/btn_two"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"/>
+
+    <Button
+        android:id="@+id/btn_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/deamwhite"
+        android:text="Add Reviews now"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toEndOf="@+id/btn_one"
+        app:layout_constraintTop_toBottomOf="@id/barrier_one" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                android:text="@string/text"
+                android:layout_marginTop="10dp"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_one"
+                />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp"/>
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="image_small,textview_two"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
